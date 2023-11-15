@@ -23,10 +23,14 @@ SECRET_KEY = 'django-insecure-st8@)w&(2_uh5tm9lh=3s&vge3mcuh6k9llm$$ngtci&se%r4*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "www.justpython.in", "django.captain.justpython.in"]
 
 
-# Application definition
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["64.227.156.0"])
+ADMINS = [("""sudarshan""", "sudarshan15399@gmail.com")]
+DEFAULT_FROM_EMAIL = env(
+    "DJANGO_DEFAULT_FROM_EMAIL",
+    default="crashblog <sudarshan15399@gmail.com>",
+)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
