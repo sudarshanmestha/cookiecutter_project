@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-st8@)w&(2_uh5tm9lh=3s&vge3mcuh6k9llm$$ngtci&se%r4*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "www.justpython.in", "django.captain.justpython.in"]
 
 
 # Application definition
