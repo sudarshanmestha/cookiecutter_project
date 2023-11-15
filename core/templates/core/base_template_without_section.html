@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>{% block title %}{% endblock %}Creash blog</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the burger icon element
+            const burger = document.querySelector('.navbar-burger');
+            // Get the target element that needs to be toggled
+            const menu = document.getElementById('navbarMenu');
+        
+            // Add an event listener to the burger icon
+            burger.addEventListener('click', function () {
+                // Toggle the "is-active" class on both the burger icon and the target element
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+        });
+
+        
+    </script>
+    
+
+<body>
+    <nav id="navbar" class="navbar">
+        <div class="container">
+
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <strong>Just Python</strong>
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+
+                    <div class="navbar-item">
+                           <form method="get" action="{% url 'search' %}">
+                            <div class="control has-icons-left">
+                                <input class="input is-rounded" name="query" type="text" placeholder="Search">
+                                <span class="icon is-left">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                           </form>
+                            
+                   
+                    </div>
+
+                    <a href="/" class="navbar-item is-active is-size-5 has-text-weight-semibold">
+                        Home
+                    </a>
+                    <a href="{% url 'blog' %}" class="navbar-item is-size-5 has-text-weight-semibold">
+                        Blog
+                    </a>
+                    <a href="{% url 'about' %}" class="navbar-item is-size-5 has-text-weight-semibold">
+                        About
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+    
+
+ 
+            {% block content %}
+            {% endblock %}
+
+    <footer class="footer bg-gray-100">
+        <div class="content has-text-centered">
+            
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <div class="flex justify-center text-teal-300 sm:justify-middle">
+                 <img class="rounded-full" src="https://static.thenounproject.com/png/2686167-84.png" width="40" height="40" />
+                 <div class="flex justify-center text-teal-300 sm:justify-start">
+                  <img class="rounded-full" src="https://www.svgrepo.com/show/494273/facebook-round.svg" width="25" height="25" />
+                  <img class="rounded-full" src="https://www.svgrepo.com/show/494278/linkedin-round.svg" width="25" height="25" />
+                  <img class="rounded-full" src="https://www.svgrepo.com/show/494277/instagram-round.svg" width="25" height="25" />
+                </div>
+                </div>
+          
+                
+            </div>
+            <p class="mt-4 text-sm text-center text-gray-400 lg:text-middle">
+              T&C &nbsp; Career &nbsp; Privacy & Policy &nbsp; Developers
+            </p>
+              <p>
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script>
+                All rights reserved | This website is made with <i class="fas fa-heart"></i>
+              </p>
+
+              
+             
+        </div>  
+        
+        
+        
+       </footer>
+    
+    
+
+
+
+</body>
+</html>
