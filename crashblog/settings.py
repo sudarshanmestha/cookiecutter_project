@@ -25,7 +25,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["64.227.156.0"])
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["justpython.in", "localhost", "0.0.0.0", "127.0.0.1"])
 ADMINS = [("""sudarshan""", "sudarshan15399@gmail.com")]
 DEFAULT_FROM_EMAIL = env(
     "DJANGO_DEFAULT_FROM_EMAIL",

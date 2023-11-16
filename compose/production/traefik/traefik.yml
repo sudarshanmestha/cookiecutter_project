@@ -28,7 +28,7 @@ certificatesResolvers:
 http:
   routers:
     web-secure-router:
-      rule: 'Host(`64.227.156.0`) || Host(`64.227.156.0`)'
+      rule: 'Host(`justpython.in`) || Host(`justpython.in`)'
       entryPoints:
         - web-secure
       middlewares:

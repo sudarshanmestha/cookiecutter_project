@@ -1,16 +1,6 @@
--r requirements/base.txt
+# PRECAUTION: avoid production dependencies that aren't in development
 
-asgiref==3.7.2
-Django==4.2.7
-django-ckeditor==6.7.0
-django-js-asset==2.1.0
-Pillow==10.1.0
-sqlparse==0.4.4
-typing_extensions==4.8.0
-
-
-
-
+-r base.txt
 
 gunicorn==21.2.0  # https://github.com/benoitc/gunicorn
 psycopg[c]==3.1.12  # https://github.com/psycopg/psycopg
